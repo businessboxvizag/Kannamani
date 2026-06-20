@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — KannaVest Finance Portfolio</title>
+  <meta name="description" content="Book a free financial consultation with KannaVest. Get expert guidance on wealth, investment, tax planning and business strategy.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="loader">
+    <div class="loader-content">
+      <div class="loader-logo">KannaVest</div>
+      <div class="loader-bar"><div class="loader-progress"></div></div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+          <div class="logo-icon">₭</div>
+          <span class="logo-text">Kanna<span class="logo-accent">Vest</span></span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="contact.html" class="btn btn-primary" id="nav-cta-btn">Get Started →</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-grid"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep">/</span>
+          <span class="current">Contact</span>
+        </div>
+        <div class="section-label" style="justify-content:center;">Let's Connect</div>
+        <h1>Start Your <span style="background:linear-gradient(135deg,var(--gold),var(--electric-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Financial Journey</span></h1>
+        <p style="max-width:600px;margin:1.5rem auto 0;font-size:1.1rem;">Book a free 30-minute consultation — no pressure, just clarity on what's possible for your financial future.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Contact Info -->
+        <div class="contact-info reveal">
+          <h3>Get in Touch</h3>
+          <p>Whether you're ready to start or just exploring your options, I'd love to connect and understand your goals.</p>
+
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="ci-icon">📧</div>
+              <div>
+                <div class="ci-label">Email</div>
+                <div class="ci-value">hello@kannavest.com</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon">📞</div>
+              <div>
+                <div class="ci-label">Phone / WhatsApp</div>
+                <div class="ci-value">+91 90000 00000</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon">📍</div>
+              <div>
+                <div class="ci-label">Office</div>
+                <div class="ci-value">Bandra Kurla Complex, Mumbai 400051</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon">🕐</div>
+              <div>
+                <div class="ci-label">Office Hours</div>
+                <div class="ci-value">Mon – Fri · 9:00 AM – 7:00 PM IST</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-bottom:1.5rem;">
+            <div style="font-family:var(--font-heading);font-weight:700;font-size:0.95rem;color:var(--white);margin-bottom:1rem;">Follow Along</div>
+            <div class="social-links">
+              <a href="#" class="social-link" id="social-linkedin" aria-label="LinkedIn">in</a>
+              <a href="#" class="social-link" id="social-twitter" aria-label="Twitter">𝕏</a>
+              <a href="#" class="social-link" id="social-youtube" aria-label="YouTube">▶</a>
+              <a href="#" class="social-link" id="social-insta" aria-label="Instagram">◎</a>
+            </div>
+          </div>
+
+          <!-- Mini Availability card -->
+          <div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.25);border-radius:16px;padding:1.3rem 1.5rem;display:flex;align-items:center;gap:1rem;">
+            <div style="width:12px;height:12px;border-radius:50%;background:var(--success);box-shadow:0 0 10px rgba(16,185,129,0.6);animation:pulse 2s infinite;flex-shrink:0;"></div>
+            <div>
+              <div style="font-family:var(--font-heading);font-weight:700;font-size:0.95rem;color:var(--white);">Currently Accepting Clients</div>
+              <div style="font-size:0.8rem;color:var(--gray);margin-top:0.1rem;">Limited slots available · June 2026</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrap reveal reveal-delay-2">
+          <h3>Book a Free Consultation</h3>
+          <p>Fill in the details below and I'll get back to you within 24 hours.</p>
+          <form id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first_name" placeholder="Rajesh" required>
+              </div>
+              <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last_name" placeholder="Sharma">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="rajesh@company.com" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone / WhatsApp</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210">
+            </div>
+            <div class="form-group">
+              <label for="service">Service Interested In</label>
+              <select id="service" name="service">
+                <option value="">Select a service...</option>
+                <option value="wealth">Wealth Management</option>
+                <option value="strategy">Business Strategy</option>
+                <option value="tax">Tax Optimization</option>
+                <option value="investment">Investment Advisory</option>
+                <option value="risk">Risk Analysis</option>
+                <option value="retirement">Retirement Planning</option>
+                <option value="other">Other / Not Sure</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="budget">Approximate Investment Range</label>
+              <select id="budget" name="budget">
+                <option value="">Select range...</option>
+                <option value="under10">Under ₹10 Lakhs</option>
+                <option value="10-50">₹10L – ₹50 Lakhs</option>
+                <option value="50-2cr">₹50L – ₹2 Crore</option>
+                <option value="above2cr">Above ₹2 Crore</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Your Goals & Questions</label>
+              <textarea id="message" name="message" placeholder="Tell me about your financial goals, current situation, or any questions you have..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary submit-btn" id="submit-btn" style="width:100%;justify-content:center;padding:1rem;">
+              Send Message & Book Call →
+            </button>
+            <p style="font-size:0.78rem;color:var(--gray);text-align:center;margin-top:1rem;">🔒 Your information is 100% confidential and never shared.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="gradient-divider"></div>
+
+  <!-- FAQ SECTION -->
+  <section class="section">
+    <div class="container">
+      <div style="max-width:750px;margin:0 auto;">
+        <div class="section-label">FAQ</div>
+        <h2 class="section-title reveal">Common <span>Questions</span></h2>
+        <div style="display:flex;flex-direction:column;gap:1rem;margin-top:3rem;">
+
+          <div class="glass-card reveal reveal-delay-1" style="cursor:pointer;" id="faq-1">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <h4 style="font-size:1rem;">Is the initial consultation really free?</h4>
+              <span style="color:var(--gold);font-size:1.3rem;flex-shrink:0;">+</span>
+            </div>
+            <p style="font-size:0.9rem;margin-top:0.8rem;display:none;" class="faq-answer">Yes — the first 30-minute discovery call is completely free with no obligation. It's a chance for us to understand your goals and see if we're a great fit for each other.</p>
+          </div>
+
+          <div class="glass-card reveal reveal-delay-2" style="cursor:pointer;" id="faq-2">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <h4 style="font-size:1rem;">What is the minimum investment amount?</h4>
+              <span style="color:var(--gold);font-size:1.3rem;flex-shrink:0;">+</span>
+            </div>
+            <p style="font-size:0.9rem;margin-top:0.8rem;display:none;" class="faq-answer">I work with clients across all asset levels. For dedicated portfolio management, a starting capital of ₹10 Lakhs is typical. However, consultations and business strategy services have no minimum.</p>
+          </div>
+
+          <div class="glass-card reveal reveal-delay-3" style="cursor:pointer;" id="faq-3">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <h4 style="font-size:1rem;">Do you work with NRI clients?</h4>
+              <span style="color:var(--gold);font-size:1.3rem;flex-shrink:0;">+</span>
+            </div>
+            <p style="font-size:0.9rem;margin-top:0.8rem;display:none;" class="faq-answer">Absolutely. I specialize in NRI financial planning including FEMA compliance, DTAA optimization, NRE/NRO account strategies, and cross-border wealth management for clients in UAE, UK and USA.</p>
+          </div>
+
+          <div class="glass-card reveal reveal-delay-4" style="cursor:pointer;" id="faq-4">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <h4 style="font-size:1rem;">How are your fees structured?</h4>
+              <span style="color:var(--gold);font-size:1.3rem;flex-shrink:0;">+</span>
+            </div>
+            <p style="font-size:0.9rem;margin-top:0.8rem;display:none;" class="faq-answer">Fees vary by service. Portfolio management is typically AUM-based (0.75–1.5% annually). Tax planning and business consulting are project-based or retainer. All fees are fully transparent with no hidden charges.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="margin-bottom:0.5rem;display:inline-flex;">
+            <div class="logo-icon">₭</div>
+            <span class="logo-text">Kanna<span class="logo-accent">Vest</span></span>
+          </a>
+          <p>Empowering individuals and businesses to achieve financial excellence through expert strategy and personalized guidance.</p>
+          <div class="social-links">
+            <a href="#" class="social-link">in</a>
+            <a href="#" class="social-link">𝕏</a>
+            <a href="#" class="social-link">✉</a>
+            <a href="#" class="social-link">▶</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Services</div>
+          <ul class="footer-links">
+            <li><a href="services.html">Wealth Management</a></li>
+            <li><a href="services.html">Business Strategy</a></li>
+            <li><a href="services.html">Tax Optimization</a></li>
+            <li><a href="services.html">Investment Advisory</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Contact</div>
+          <ul class="footer-links">
+            <li><a href="mailto:hello@kannavest.com">hello@kannavest.com</a></li>
+            <li><a href="#">+91 90000 00000</a></li>
+            <li><a href="#">Mumbai, India</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 KannaVest. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('[id^="faq-"]').forEach(card => {
+      card.addEventListener('click', () => {
+        const answer = card.querySelector('.faq-answer');
+        const icon = card.querySelector('span');
+        const isOpen = answer.style.display === 'block';
+        // Close all
+        document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+        document.querySelectorAll('[id^="faq-"] span').forEach(i => i.textContent = '+');
+        // Toggle this one
+        if (!isOpen) {
+          answer.style.display = 'block';
+          icon.textContent = '−';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

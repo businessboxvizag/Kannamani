@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Gallery — KannaVest Finance</title>
+  <meta name="description" content="Browse our portfolio of financial success stories, case studies and client results across wealth management and business strategy.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .gallery-item {
+      background: var(--navy-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .gallery-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .gallery-placeholder .gp-icon { font-size: 3.5rem; opacity: 0.25; }
+    .gallery-placeholder .gp-label {
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    /* Case study hover card backgrounds */
+    .g-bg-1 { background: linear-gradient(135deg, #0D1535 0%, #1A237E 100%); }
+    .g-bg-2 { background: linear-gradient(135deg, #0D1535 0%, #1B5E20 100%); }
+    .g-bg-3 { background: linear-gradient(135deg, #0D1535 0%, #4A148C 100%); }
+    .g-bg-4 { background: linear-gradient(135deg, #0D1535 0%, #BF360C 100%); }
+    .g-bg-5 { background: linear-gradient(135deg, #0D1535 0%, #006064 100%); }
+    .g-bg-6 { background: linear-gradient(135deg, #0D1535 0%, #F57F17 50%, #0D1535 100%); }
+    .g-bg-7 { background: linear-gradient(135deg, #0D1535 0%, #1A237E 50%, #004D40 100%); }
+
+    .gallery-stats-bar {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .gstat {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 14px;
+      padding: 1.2rem 1.8rem;
+      text-align: center;
+      flex: 1;
+      min-width: 140px;
+    }
+
+    .gstat-num {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--gold), var(--electric-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .gstat-label { font-size: 0.82rem; color: var(--gray); margin-top: 0.2rem; }
+
+    /* Result badge on cards */
+    .result-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(16,185,129,0.9);
+      color: white;
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.3rem 0.7rem;
+      border-radius: 50px;
+      backdrop-filter: blur(10px);
+    }
+
+    .result-badge.gold { background: rgba(245,158,11,0.9); color: var(--navy); }
+    .result-badge.blue { background: rgba(59,130,246,0.9); }
+  </style>
+</head>
+<body>
+
+  <div id="loader">
+    <div class="loader-content">
+      <div class="loader-logo">KannaVest</div>
+      <div class="loader-bar"><div class="loader-progress"></div></div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+          <div class="logo-icon">₭</div>
+          <span class="logo-text">Kanna<span class="logo-accent">Vest</span></span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="contact.html" class="btn btn-primary" id="nav-cta-btn">Get Started →</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-grid"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep">/</span>
+          <span class="current">Portfolio</span>
+        </div>
+        <div class="section-label" style="justify-content:center;">Case Studies</div>
+        <h1>A Track Record of <span style="background:linear-gradient(135deg,var(--gold),var(--electric-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Real Results</span></h1>
+        <p style="max-width:600px;margin:1.5rem auto 0;font-size:1.1rem;">Browse selected case studies and success stories that demonstrate the impact of expert financial strategy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section">
+    <div class="container">
+
+      <!-- Stats Bar -->
+      <div class="gallery-stats-bar reveal">
+        <div class="gstat">
+          <div class="gstat-num">250+</div>
+          <div class="gstat-label">Clients Served</div>
+        </div>
+        <div class="gstat">
+          <div class="gstat-num">₹500Cr</div>
+          <div class="gstat-label">Assets Managed</div>
+        </div>
+        <div class="gstat">
+          <div class="gstat-num">34%</div>
+          <div class="gstat-label">Avg Annual Return</div>
+        </div>
+        <div class="gstat">
+          <div class="gstat-num">98%</div>
+          <div class="gstat-label">Client Retention</div>
+        </div>
+        <div class="gstat">
+          <div class="gstat-num">12+</div>
+          <div class="gstat-label">Years Experience</div>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="gallery-filters reveal">
+        <button class="filter-btn active" data-filter="all" id="filter-all">All Projects</button>
+        <button class="filter-btn" data-filter="wealth" id="filter-wealth">Wealth Management</button>
+        <button class="filter-btn" data-filter="strategy" id="filter-strategy">Business Strategy</button>
+        <button class="filter-btn" data-filter="tax" id="filter-tax">Tax Planning</button>
+        <button class="filter-btn" data-filter="investment" id="filter-investment">Investment</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-grid">
+
+        <div class="gallery-item large reveal" data-category="strategy" id="gallery-item-1">
+          <img src="dubai.jpg" alt="Dubai Business Engagement" loading="lazy">
+          <div class="result-badge gold">International</div>
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-content">
+              <span class="gallery-item-title">Dubai Business Engagement</span>
+              <span class="gallery-item-cat">Business Strategy · International Markets</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal reveal-delay-1" data-category="wealth" id="gallery-item-2">
+          <img src="hr meet.jpg" alt="Corporate HR Strategy Meet" loading="lazy">
+          <div class="result-badge">Leadership</div>
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-content">
+              <span class="gallery-item-title">Corporate Strategy Session</span>
+              <span class="gallery-item-cat">Wealth Management · Team Advisory</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal reveal-delay-2" data-category="investment" id="gallery-item-3">
+          <img src="oman.jpg" alt="Oman Investment Forum" loading="lazy">
+          <div class="result-badge blue">GCC Markets</div>
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-content">
+              <span class="gallery-item-title">Oman Investment Forum</span>
+              <span class="gallery-item-cat">Investment Advisory · GCC Expansion</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal reveal-delay-1" data-category="strategy" id="gallery-item-4">
+          <img src="mechanical wrks.jpg" alt="Industrial Business Consulting" loading="lazy">
+          <div class="result-badge gold">+42% Revenue</div>
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-content">
+              <span class="gallery-item-title">Industrial Sector Turnaround</span>
+              <span class="gallery-item-cat">Business Strategy · Operations Consulting</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item large reveal reveal-delay-2" data-category="strategy" id="gallery-item-5">
+          <img src="dubai 2.jpg" alt="Dubai Conference 2025" loading="lazy">
+          <div class="result-badge blue">Conference 2025</div>
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-content">
+              <span class="gallery-item-title">MENA Finance Summit — Dubai</span>
+              <span class="gallery-item-cat">Business Strategy · Network Expansion · Speaking</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal reveal-delay-1" data-category="wealth" id="gallery-item-6">
+          <img src="hr meet 2.jpg" alt="Executive Team Consultation" loading="lazy">
+          <div class="result-badge gold">Executive</div>
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-content">
+              <span class="gallery-item-title">Executive Wealth Planning</span>
+              <span class="gallery-item-cat">Wealth Management · HNI Portfolio</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal reveal-delay-2" data-category="investment" id="gallery-item-7">
+          <img src="oman 2.jpg" alt="Gulf Investment Strategy" loading="lazy">
+          <div class="result-badge">28% IRR</div>
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-content">
+              <span class="gallery-item-title">Gulf NRI Investment Strategy</span>
+              <span class="gallery-item-cat">Investment Advisory · International Markets</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS (Full Section) -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-label">Client Voices</div>
+      <h2 class="section-title reveal">What Clients <span>Say About Us</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">Relationships built on trust, transparency and exceptional results.</p>
+      <div class="testimonials-grid">
+
+        <div class="testi-card reveal reveal-delay-1">
+          <div class="testi-quote">"</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">Working with KannaVest transformed our company's financial outlook completely. Our portfolio grew 40% in the first year — absolutely exceptional expertise and dedication.</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#F59E0B,#D97706);color:#060B20;">RS</div>
+            <div><div class="testi-name">Rajesh Sharma</div><div class="testi-role">CEO, TechNova Solutions</div></div>
+          </div>
+        </div>
+
+        <div class="testi-card reveal reveal-delay-2">
+          <div class="testi-quote">"</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">The tax optimization strategy alone saved us ₹18 lakhs this year. Unparalleled knowledge and a genuinely client-first approach that I haven't found anywhere else.</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#3B82F6,#06B6D4);color:#fff;">PP</div>
+            <div><div class="testi-name">Priya Patel</div><div class="testi-role">Founder, GreenLeaf Ventures</div></div>
+          </div>
+        </div>
+
+        <div class="testi-card reveal reveal-delay-3">
+          <div class="testi-quote">"</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">A true visionary in finance. The business strategy roadmap provided the clarity and direction our startup desperately needed to scale from ₹2Cr to ₹10Cr ARR.</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#10B981,#059669);color:#fff;">AK</div>
+            <div><div class="testi-name">Arjun Kumar</div><div class="testi-role">MD, Apex Capital Partners</div></div>
+          </div>
+        </div>
+
+        <div class="testi-card reveal reveal-delay-1">
+          <div class="testi-quote">"</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">I came in confused about NRI taxation and left with a crystal-clear plan that maximized my returns while staying fully compliant. Highly recommended!</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#F59E0B,#EF4444);color:#fff;">SM</div>
+            <div><div class="testi-name">Sunita Mehta</div><div class="testi-role">Senior Engineer, Dubai</div></div>
+          </div>
+        </div>
+
+        <div class="testi-card reveal reveal-delay-2">
+          <div class="testi-quote">"</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">We secured ₹45Cr in Series B funding using the pitch strategy and financial models built by KannaVest. Invaluable partner in our growth journey.</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#8B5CF6,#6D28D9);color:#fff;">VR</div>
+            <div><div class="testi-name">Vivek Rao</div><div class="testi-role">Co-Founder, EduPath AI</div></div>
+          </div>
+        </div>
+
+        <div class="testi-card reveal reveal-delay-3">
+          <div class="testi-quote">"</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">After 5 years of working together, my retirement corpus is fully funded at 44. I couldn't have imagined this level of financial security without their guidance.</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#06B6D4,#0891B2);color:#fff;">DG</div>
+            <div><div class="testi-name">Deepak Gupta</div><div class="testi-role">Director, Infra Group Ltd</div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card reveal">
+        <div class="section-label" style="justify-content:center;">Your Turn</div>
+        <h2>Ready to Write Your <span>Success Story?</span></h2>
+        <p>Join 250+ clients who have transformed their financial future. Let's start your journey today.</p>
+        <div class="cta-btns">
+          <a href="contact.html" class="btn btn-primary" id="gallery-cta-btn">Start Your Story →</a>
+          <a href="services.html" class="btn btn-outline" id="gallery-services-btn">View Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="margin-bottom:0.5rem;display:inline-flex;">
+            <div class="logo-icon">₭</div>
+            <span class="logo-text">Kanna<span class="logo-accent">Vest</span></span>
+          </a>
+          <p>Empowering individuals and businesses to achieve financial excellence through expert strategy and personalized guidance.</p>
+          <div class="social-links">
+            <a href="#" class="social-link">in</a>
+            <a href="#" class="social-link">𝕏</a>
+            <a href="#" class="social-link">✉</a>
+            <a href="#" class="social-link">▶</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Services</div>
+          <ul class="footer-links">
+            <li><a href="services.html">Wealth Management</a></li>
+            <li><a href="services.html">Business Strategy</a></li>
+            <li><a href="services.html">Tax Optimization</a></li>
+            <li><a href="services.html">Investment Advisory</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Contact</div>
+          <ul class="footer-links">
+            <li><a href="mailto:hello@kannavest.com">hello@kannavest.com</a></li>
+            <li><a href="#">+91 90000 00000</a></li>
+            <li><a href="#">Mumbai, India</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 KannaVest. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

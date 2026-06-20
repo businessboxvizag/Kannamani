@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services — Kannamani Consultants Pvt Ltd | Overseas Recruitment</title>
+  <meta name="description" content="International job placements, work permits, visa processing, overseas employment guidance across construction, warehouse, farming, manufacturing and skilled labor sectors.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .service-detail-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 2.5rem;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .service-detail-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: linear-gradient(to bottom, var(--green), var(--green-light));
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 0.4s ease;
+    }
+    .service-detail-card:hover::before { transform: scaleY(1); }
+    .service-detail-card:hover {
+      border-color: rgba(27,138,62,0.25);
+      background: rgba(27,138,62,0.04);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    }
+    .sdc-top {
+      display: flex;
+      gap: 1.3rem;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+    .sdc-icon {
+      width: 60px; height: 60px;
+      border-radius: 16px;
+      background: rgba(27,138,62,0.15);
+      border: 1px solid rgba(27,138,62,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+    .sdc-heading { font-family: var(--font-heading); font-weight: 800; font-size: 1.2rem; color: var(--white); margin-bottom: 0.3rem; }
+    .sdc-sub { font-size: 0.8rem; color: var(--green-light); font-weight: 600; }
+    .sdc-desc { font-size: 0.93rem; margin-bottom: 1.5rem; }
+    .sdc-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+    .sdc-list li {
+      display: flex; align-items: center; gap: 0.7rem;
+      font-size: 0.88rem; color: var(--gray-light);
+    }
+    .sdc-list li::before { content: '✓'; color: var(--green-light); font-weight: 700; flex-shrink: 0; }
+    .sdc-countries { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .sdc-ctag {
+      background: rgba(13,27,94,0.7);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.75rem;
+      color: var(--gray-light);
+    }
+
+    .process-step {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 1.5rem;
+      align-items: start;
+      padding: 2rem;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      transition: var(--transition);
+    }
+    .process-step:hover { border-color: rgba(27,138,62,0.25); background: rgba(27,138,62,0.04); }
+    .ps-num {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green), var(--green-mid));
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 900; font-size: 1.4rem;
+      color: var(--white);
+      box-shadow: 0 8px 25px rgba(27,138,62,0.35);
+      flex-shrink: 0;
+    }
+    .ps-title { font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem; color: var(--white); margin-bottom: 0.5rem; }
+    .ps-desc { font-size: 0.9rem; }
+
+    .doc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .doc-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: var(--white);
+      transition: var(--transition);
+    }
+    .doc-item:hover { border-color: rgba(27,138,62,0.3); background: rgba(27,138,62,0.06); }
+    .doc-item .doc-icon { font-size: 1.4rem; flex-shrink: 0; }
+
+    @media (max-width: 768px) {
+      .doc-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="loader">
+    <div class="loader-content">
+      <div class="loader-logo-wrap"><img src="Kannamani logo.png" alt="Kannamani Consultants"></div>
+      <div class="loader-bar"><div class="loader-progress"></div></div>
+    </div>
+  </div>
+
+  <div class="top-bar">
+    <span>🌍 Now Recruiting for Europe — Serbia, Germany & More</span>
+    <span class="sep">|</span>
+    <span>✅ Government-Compliant Process</span>
+    <span class="sep">|</span>
+    <span>📞 Call: +91 00000 00000</span>
+  </div>
+
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo"><img src="Kannamani logo.png" alt="Kannamani Consultants"></a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="contact.html" class="btn btn-primary" id="nav-apply-btn">Apply Now →</a>
+        </div>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-grid"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a><span class="sep">/</span><span class="cur">Services</span>
+        </div>
+        <div class="section-label" style="justify-content:center;">What We Offer</div>
+        <h1>Complete <span style="background:linear-gradient(135deg,#2ECC71,#A7F3D0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Overseas Recruitment</span> Solutions</h1>
+        <p style="max-width:650px;margin:1.5rem auto 0;font-size:1.05rem;">From job placement to visa, work permit and travel — we handle every step of your international career journey.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE SERVICES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label">Core Services</div>
+      <h2 class="section-title reveal">Everything You Need to <span class="highlight">Work Abroad</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">Six end-to-end services that cover every aspect of overseas employment — so you focus on the opportunity, we handle the rest.</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+
+        <div class="service-detail-card reveal reveal-delay-1" id="service-placement">
+          <div class="sdc-top">
+            <div class="sdc-icon">✈️</div>
+            <div>
+              <div class="sdc-heading">International Job Placements</div>
+              <div class="sdc-sub">Our flagship service · All sectors</div>
+            </div>
+          </div>
+          <p class="sdc-desc">We match verified Indian candidates with legitimate overseas employers across Europe, Gulf and beyond. Our employer network has been vetted over 21 years to ensure safe, well-paid and legal employment opportunities.</p>
+          <ul class="sdc-list">
+            <li>Direct employer-to-candidate matching</li>
+            <li>Verified job offers with written contracts</li>
+            <li>Salary & benefits counselling before acceptance</li>
+            <li>Multiple sectors: construction to agriculture</li>
+            <li>Both skilled & unskilled positions available</li>
+          </ul>
+          <div style="margin-bottom:0.8rem;font-family:var(--font-heading);font-size:0.75rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;">Available Destinations</div>
+          <div class="sdc-countries">
+            <span class="sdc-ctag">🇷🇸 Serbia</span>
+            <span class="sdc-ctag">🇩🇪 Germany</span>
+            <span class="sdc-ctag">🇦🇪 UAE</span>
+            <span class="sdc-ctag">🇴🇲 Oman</span>
+            <span class="sdc-ctag">🇶🇦 Qatar</span>
+            <span class="sdc-ctag">🇸🇦 Saudi Arabia</span>
+          </div>
+        </div>
+
+        <div class="service-detail-card reveal reveal-delay-2" id="service-visa">
+          <div class="sdc-top">
+            <div class="sdc-icon">🛂</div>
+            <div>
+              <div class="sdc-heading">Visa Processing Assistance</div>
+              <div class="sdc-sub">End-to-end visa application support</div>
+            </div>
+          </div>
+          <p class="sdc-desc">Navigating foreign visa requirements is complex. Our experienced team manages the entire visa application process — from document preparation to appointment scheduling and status tracking — to maximize approval success.</p>
+          <ul class="sdc-list">
+            <li>Work visa application preparation</li>
+            <li>Embassy documentation guidance</li>
+            <li>Visa appointment coordination</li>
+            <li>Status tracking and follow-up</li>
+            <li>Re-application support if needed</li>
+          </ul>
+          <div style="margin-bottom:0.8rem;font-family:var(--font-heading);font-size:0.75rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;">Visa Types Handled</div>
+          <div class="sdc-countries">
+            <span class="sdc-ctag">Work Visa</span>
+            <span class="sdc-ctag">Employment Visa</span>
+            <span class="sdc-ctag">Schengen</span>
+            <span class="sdc-ctag">Labour Visa</span>
+          </div>
+        </div>
+
+        <div class="service-detail-card reveal reveal-delay-1" id="service-workpermit">
+          <div class="sdc-top">
+            <div class="sdc-icon">📋</div>
+            <div>
+              <div class="sdc-heading">Work Permit Processing</div>
+              <div class="sdc-sub">Legal authorization to work abroad</div>
+            </div>
+          </div>
+          <p class="sdc-desc">A valid work permit is essential for legal employment abroad. We liaise directly with overseas employers and foreign government authorities to obtain the correct work authorization for every candidate before travel.</p>
+          <ul class="sdc-list">
+            <li>Work permit application via employer</li>
+            <li>Coordination with foreign authorities</li>
+            <li>Document translation and attestation</li>
+            <li>Permit renewal guidance for extensions</li>
+            <li>Compliance with bilateral labor treaties</li>
+          </ul>
+          <div style="margin-bottom:0.8rem;font-family:var(--font-heading);font-size:0.75rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;">Key Countries</div>
+          <div class="sdc-countries">
+            <span class="sdc-ctag">🇷🇸 Serbia</span>
+            <span class="sdc-ctag">🇩🇪 Germany</span>
+            <span class="sdc-ctag">🇵🇱 Poland</span>
+            <span class="sdc-ctag">GCC Countries</span>
+          </div>
+        </div>
+
+        <div class="service-detail-card reveal reveal-delay-2" id="service-documentation">
+          <div class="sdc-top">
+            <div class="sdc-icon">📂</div>
+            <div>
+              <div class="sdc-heading">Candidate Documentation Support</div>
+              <div class="sdc-sub">Full documentation management</div>
+            </div>
+          </div>
+          <p class="sdc-desc">Many candidates lose opportunities due to incomplete or incorrect paperwork. Our team thoroughly reviews, organises and prepares all required documentation — ensuring your file is complete and correct before submission.</p>
+          <ul class="sdc-list">
+            <li>Passport and identity verification</li>
+            <li>Educational & skill certificate attestation</li>
+            <li>Medical fitness certificate arrangement</li>
+            <li>Police clearance certificate guidance</li>
+            <li>Contract review and explanation in local language</li>
+          </ul>
+          <div style="margin-bottom:0.8rem;font-family:var(--font-heading);font-size:0.75rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;">Documents We Handle</div>
+          <div class="sdc-countries">
+            <span class="sdc-ctag">Passport</span>
+            <span class="sdc-ctag">PCC</span>
+            <span class="sdc-ctag">Medical</span>
+            <span class="sdc-ctag">Attestation</span>
+            <span class="sdc-ctag">Contracts</span>
+          </div>
+        </div>
+
+        <div class="service-detail-card reveal reveal-delay-1" id="service-counselling">
+          <div class="sdc-top">
+            <div class="sdc-icon">💬</div>
+            <div>
+              <div class="sdc-heading">Overseas Employment Guidance</div>
+              <div class="sdc-sub">Pre-departure counselling & orientation</div>
+            </div>
+          </div>
+          <p class="sdc-desc">Working abroad is a life-changing move. We prepare every candidate with thorough pre-departure counselling covering the destination country, job expectations, cultural adjustment, legal rights and emergency contacts.</p>
+          <ul class="sdc-list">
+            <li>Destination country orientation briefing</li>
+            <li>Salary, deduction and savings guidance</li>
+            <li>Worker rights and legal protections explained</li>
+            <li>Emergency contact protocols established</li>
+            <li>Family communication and remittance guidance</li>
+          </ul>
+          <div style="margin-bottom:0.8rem;font-family:var(--font-heading);font-size:0.75rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;">Includes</div>
+          <div class="sdc-countries">
+            <span class="sdc-ctag">Pre-Departure Briefing</span>
+            <span class="sdc-ctag">Legal Rights</span>
+            <span class="sdc-ctag">Cultural Prep</span>
+          </div>
+        </div>
+
+        <div class="service-detail-card reveal reveal-delay-2" id="service-interview">
+          <div class="sdc-top">
+            <div class="sdc-icon">🎯</div>
+            <div>
+              <div class="sdc-heading">Interview Co-Ordination</div>
+              <div class="sdc-sub">Connecting candidates with employers</div>
+            </div>
+          </div>
+          <p class="sdc-desc">We organise structured interview drives — bringing verified overseas employers directly to candidates. Our team handles all logistics, briefing and follow-up to maximise the chance of selection at employer interviews.</p>
+          <ul class="sdc-list">
+            <li>Employer interview drives organised locally</li>
+            <li>Online video interviews for Gulf & Europe</li>
+            <li>Pre-interview skill assessment & coaching</li>
+            <li>Translation support where required</li>
+            <li>Post-interview offer negotiation support</li>
+          </ul>
+          <div style="margin-bottom:0.8rem;font-family:var(--font-heading);font-size:0.75rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;">Interview Formats</div>
+          <div class="sdc-countries">
+            <span class="sdc-ctag">In-Person Drives</span>
+            <span class="sdc-ctag">Video Calls</span>
+            <span class="sdc-ctag">Skill Tests</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="gradient-divider"></div>
+
+  <!-- SECTORS WE RECRUIT -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label">Job Sectors</div>
+      <h2 class="section-title reveal">Industries We <span class="highlight">Recruit For</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">Our overseas employer network covers a wide range of sectors — meaning opportunities for both skilled tradesmen and general laborers.</p>
+      <div class="sectors-grid">
+
+        <div class="sector-card reveal reveal-delay-1" id="construction">
+          <div class="sector-icon">🏗️</div>
+          <h3>Construction</h3>
+          <p>One of the highest-demand sectors. We recruit masons, carpenters, steel fixers, concrete workers, site helpers and supervisors for major infrastructure projects.</p>
+          <div class="sector-tags">
+            <span class="stag">Serbia</span><span class="stag">Germany</span><span class="stag">UAE</span><span class="stag">Oman</span><span class="stag">Qatar</span>
+          </div>
+        </div>
+
+        <div class="sector-card reveal reveal-delay-2" id="warehouse">
+          <div class="sector-icon">📦</div>
+          <h3>Warehouse & Logistics</h3>
+          <p>Europe's booming e-commerce and logistics industry needs warehouse workers, forklift operators, sorters, packers and dispatch assistants year-round.</p>
+          <div class="sector-tags">
+            <span class="stag">Serbia</span><span class="stag">Poland</span><span class="stag">Czech Republic</span><span class="stag">Romania</span>
+          </div>
+        </div>
+
+        <div class="sector-card reveal reveal-delay-3" id="farming">
+          <div class="sector-icon">🌾</div>
+          <h3>Farming & Agriculture</h3>
+          <p>Seasonal and permanent agricultural roles — fruit picking, greenhouse cultivation, livestock management, agri-processing and farm operations.</p>
+          <div class="sector-tags">
+            <span class="stag">Europe</span><span class="stag">Saudi Arabia</span><span class="stag">Qatar</span>
+          </div>
+        </div>
+
+        <div class="sector-card reveal reveal-delay-1" id="manufacturing">
+          <div class="sector-icon">⚙️</div>
+          <h3>Manufacturing</h3>
+          <p>Machine operators, assembly line workers, quality inspectors and production technicians for factories and industrial plants in Europe and the Gulf.</p>
+          <div class="sector-tags">
+            <span class="stag">Serbia</span><span class="stag">Germany</span><span class="stag">Romania</span><span class="stag">UAE</span>
+          </div>
+        </div>
+
+        <div class="sector-card reveal reveal-delay-2" id="skilled">
+          <div class="sector-icon">🔧</div>
+          <h3>Skilled Labor</h3>
+          <p>Electricians, plumbers, welders, HVAC technicians, carpenters and other trade-certified professionals for specialist overseas contracts.</p>
+          <div class="sector-tags">
+            <span class="stag">Germany</span><span class="stag">UAE</span><span class="stag">Qatar</span><span class="stag">Oman</span>
+          </div>
+        </div>
+
+        <div class="sector-card reveal reveal-delay-3" id="general">
+          <div class="sector-icon">👷</div>
+          <h3>Unskilled & General Labor</h3>
+          <p>Cleaning, housekeeping, kitchen helpers, general helpers and entry-level roles — open to motivated candidates with no prior experience required.</p>
+          <div class="sector-tags">
+            <span class="stag">Multiple Countries</span><span class="stag">All Openings</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="gradient-divider"></div>
+
+  <!-- DOCUMENTS REQUIRED -->
+  <section class="section">
+    <div class="container">
+      <div style="max-width:900px;margin:0 auto;">
+        <div class="section-label">Documentation</div>
+        <h2 class="section-title reveal">Documents You'll <span class="highlight">Need to Apply</span></h2>
+        <p class="section-subtitle reveal reveal-delay-1" style="max-width:100%;">Gather these documents to begin your application. Don't worry if anything is missing — our team will guide you through getting everything in order.</p>
+        <div class="doc-grid reveal">
+          <div class="doc-item"><span class="doc-icon">🛂</span> Valid Passport (min. 6 months)</div>
+          <div class="doc-item"><span class="doc-icon">📸</span> Passport Size Photos</div>
+          <div class="doc-item"><span class="doc-icon">🎓</span> Educational Certificates</div>
+          <div class="doc-item"><span class="doc-icon">💼</span> Work Experience Letters</div>
+          <div class="doc-item"><span class="doc-icon">🔧</span> Skill/Trade Certificates</div>
+          <div class="doc-item"><span class="doc-icon">🏥</span> Medical Fitness Certificate</div>
+          <div class="doc-item"><span class="doc-icon">🚔</span> Police Clearance Certificate</div>
+          <div class="doc-item"><span class="doc-icon">🪪</span> Aadhaar / PAN Card</div>
+          <div class="doc-item"><span class="doc-icon">🏦</span> Bank Account Details</div>
+          <div class="doc-item"><span class="doc-icon">☎️</span> Emergency Contact Details</div>
+          <div class="doc-item"><span class="doc-icon">📋</span> Bio-data / Resume</div>
+          <div class="doc-item"><span class="doc-icon">✅</span> Signed Application Form</div>
+        </div>
+        <div style="background:rgba(27,138,62,0.08);border:1px solid rgba(46,204,113,0.2);border-radius:14px;padding:1.5rem 1.8rem;margin-top:1.5rem;display:flex;gap:1rem;align-items:flex-start;" class="reveal reveal-delay-1">
+          <span style="font-size:1.5rem;flex-shrink:0;">💡</span>
+          <div>
+            <div style="font-family:var(--font-heading);font-weight:700;color:var(--green-light);margin-bottom:0.3rem;">Don't have everything ready?</div>
+            <p style="margin:0;font-size:0.9rem;">Contact us anyway. Our team will assess what you have and guide you step-by-step to gather the remaining documents. We've helped thousands of candidates through this process.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card reveal">
+        <div class="section-label" style="justify-content:center;">Get Started</div>
+        <h2>Which Service Do You <span class="gold">Need?</span></h2>
+        <p>Speak to our team today for a free consultation. We'll assess your profile and identify the best international opportunities for you.</p>
+        <div class="cta-btns">
+          <a href="contact.html" class="btn btn-primary" id="services-cta-btn">Apply Now — Free →</a>
+          <a href="about.html" class="btn btn-outline" id="services-about-btn">About Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo"><img src="Kannamani logo.png" alt="Kannamani Consultants"></div>
+          <p>Trusted overseas recruitment & manpower consultancy since 2005. Interview Co-Ordination | Candidate Counselling | International Recruitment Support.</p>
+          <div class="social-row">
+            <a href="#" class="soc-btn">f</a>
+            <a href="#" class="soc-btn">💬</a>
+            <a href="#" class="soc-btn">◎</a>
+            <a href="#" class="soc-btn">▶</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Apply Now</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Services</div>
+          <ul class="footer-links">
+            <li><a href="#service-placement">Job Placements</a></li>
+            <li><a href="#service-visa">Visa Processing</a></li>
+            <li><a href="#service-workpermit">Work Permits</a></li>
+            <li><a href="#service-documentation">Documentation</a></li>
+            <li><a href="#service-interview">Interview Co-ordination</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Contact</div>
+          <ul class="footer-links">
+            <li><a href="mailto:info@kannamaniconsultants.com">info@kannamaniconsultants.com</a></li>
+            <li><a href="#">+91 00000 00000</a></li>
+            <li><a href="#">Tamil Nadu, India</a></li>
+            <li><a href="contact.html">Book Consultation</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Kannamani Consultants Private Limited. All rights reserved. | Since 2005</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a><a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
