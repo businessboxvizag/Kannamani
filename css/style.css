@@ -197,13 +197,13 @@ a { text-decoration: none; color: inherit; }
 }
 
 .nav-logo img {
-  height: 60px;
+  height: 80px;
   width: auto;
   object-fit: contain;
   filter: brightness(0) invert(1);
   transition: var(--transition);
 }
-.navbar.scrolled .nav-logo img { height: 50px; }
+.navbar.scrolled .nav-logo img { height: 70px; }
 
 .nav-links {
   display: flex;
