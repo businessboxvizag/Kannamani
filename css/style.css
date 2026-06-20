@@ -32,6 +32,7 @@
   --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
+  --topbar-h: 36px;
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -175,7 +176,7 @@ a { text-decoration: none; color: inherit; }
    ============================================= */
 .navbar {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: var(--topbar-h); left: 0; right: 0;
   z-index: 1000;
   padding: 1rem 0;
   transition: var(--transition);
@@ -246,22 +247,30 @@ a { text-decoration: none; color: inherit; }
 
 /* Top announcement bar */
 .top-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1001;
+  height: var(--topbar-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: linear-gradient(90deg, var(--green), var(--navy-mid), var(--green));
   background-size: 200% 100%;
   animation: barFlow 6s linear infinite;
-  padding: 0.5rem 0;
   font-family: var(--font-heading);
   font-size: 0.8rem;
   font-weight: 600;
   text-align: center;
   color: rgba(255,255,255,0.95);
   letter-spacing: 0.05em;
+  white-space: nowrap;
+  overflow: hidden;
 }
 @keyframes barFlow {
   0% { background-position: 0% 0%; }
   100% { background-position: 200% 0%; }
 }
-.top-bar span { margin: 0 1.5rem; }
+.top-bar span { margin: 0 1rem; }
 .top-bar .sep { opacity: 0.5; }
 
 /* =============================================
@@ -273,7 +282,7 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding-top: 6rem;
+  padding-top: 7rem;
 }
 
 .hero-bg {
@@ -420,14 +429,19 @@ a { text-decoration: none; color: inherit; }
   transform: translateX(-5px);
 }
 .dest-flag {
-  font-size: 2.2rem;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--white);
   flex-shrink: 0;
   width: 52px;
   height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255,255,255,0.06);
+  background: linear-gradient(135deg, rgba(27,138,62,0.25), rgba(13,27,94,0.6));
+  border: 1px solid rgba(46,204,113,0.25);
   border-radius: 12px;
 }
 .dest-country {
@@ -1087,3 +1101,132 @@ footer {
   gap: 2.5rem; z-index: 999;
 }
 .nav-mobile-open .nav-links a { font-size: 1.6rem; }
+
+/* =============================================
+   GALLERY FILTERS (gallery page)
+   ============================================= */
+.gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+.filter-btn {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--gray-light);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 50px;
+  padding: 0.6rem 1.4rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.filter-btn:hover {
+  color: var(--white);
+  border-color: rgba(46,204,113,0.4);
+  background: rgba(27,138,62,0.1);
+}
+.filter-btn.active {
+  color: var(--white);
+  background: linear-gradient(135deg, var(--green), var(--green-mid));
+  border-color: transparent;
+  box-shadow: 0 6px 20px rgba(27,138,62,0.35);
+}
+
+/* =============================================
+   FAQ ACCORDION (contact page)
+   ============================================= */
+.faq-item {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+.faq-item:hover { border-color: rgba(27,138,62,0.25); }
+.faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.3rem 1.5rem;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--white);
+}
+.faq-icon {
+  color: var(--green-light);
+  font-size: 1.5rem;
+  font-weight: 400;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+.faq-a {
+  display: none;
+  padding: 0 1.5rem 1.4rem;
+  font-size: 0.92rem;
+  color: var(--gray-light);
+  line-height: 1.8;
+}
+
+/* =============================================
+   ANIMATION POLISH
+   ============================================= */
+.reveal {
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+/* Button shine sweep on hover */
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.28), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+.btn:hover::after { left: 130%; }
+
+/* Smooth lazy image fade-in */
+.gallery-item img { opacity: 1; }
+
+/* Gentle float for the live badge dot already pulses; add hero glow ease */
+.hero-glow { transition: transform 0.2s ease-out; }
+
+/* =============================================
+   RESPONSIVE — top announcement bar
+   ============================================= */
+@media (max-width: 1024px) {
+  .top-bar span:nth-child(6),
+  .top-bar span:nth-child(7) { display: none; }
+}
+@media (max-width: 768px) {
+  .top-bar { font-size: 0.72rem; }
+  .top-bar span:nth-child(2),
+  .top-bar span:nth-child(3),
+  .top-bar span:nth-child(4) { display: none; }
+}
+
+/* =============================================
+   ACCESSIBILITY — reduced motion
+   ============================================= */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
