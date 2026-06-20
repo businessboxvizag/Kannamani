@@ -197,13 +197,13 @@ a { text-decoration: none; color: inherit; }
 }
 
 .nav-logo img {
-  height: 80px;
+  height: 100px;
   width: auto;
   object-fit: contain;
   filter: brightness(0) invert(1);
   transition: var(--transition);
 }
-.navbar.scrolled .nav-logo img { height: 70px; }
+.navbar.scrolled .nav-logo img { height: 78px; }
 
 .nav-links {
   display: flex;
@@ -282,7 +282,7 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding-top: 7rem;
+  padding-top: 12rem;
 }
 
 .hero-bg {
@@ -899,7 +899,7 @@ a { text-decoration: none; color: inherit; }
    PAGE HERO (inner pages)
    ============================================= */
 .page-hero {
-  padding: 10rem 0 5rem;
+  padding: 12rem 0 5rem;
   position: relative;
   overflow: hidden;
   text-align: center;
