@@ -197,13 +197,16 @@ a { text-decoration: none; color: inherit; }
 }
 
 .nav-logo img {
-  height: 52px;
+  height: 78px;
   width: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1);
+  background: #fff;
+  padding: 9px 14px;
+  border-radius: 14px;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.28);
   transition: var(--transition);
 }
-.navbar.scrolled .nav-logo img { height: 44px; }
+.navbar.scrolled .nav-logo img { height: 64px; padding: 7px 12px; }
 
 .nav-links {
   display: flex;
@@ -966,9 +969,11 @@ footer {
   margin-bottom: 3rem;
 }
 .footer-logo img {
-  height: 50px;
-  filter: brightness(0) invert(1);
-  margin-bottom: 1rem;
+  height: 72px;
+  background: #fff;
+  padding: 9px 14px;
+  border-radius: 14px;
+  margin-bottom: 1.2rem;
 }
 .footer-brand p { font-size: 0.9rem; max-width: 270px; margin-bottom: 1.5rem; }
 .footer-heading {
@@ -1026,7 +1031,7 @@ footer {
 }
 #loader.hidden { opacity: 0; visibility: hidden; }
 .loader-content { text-align: center; }
-.loader-logo-wrap img { height: 60px; filter: brightness(0) invert(1); margin-bottom: 1.5rem; }
+.loader-logo-wrap img { height: 96px; background: #fff; padding: 12px 18px; border-radius: 16px; margin-bottom: 1.5rem; }
 .loader-bar { width: 180px; height: 3px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; margin: 0 auto; }
 .loader-progress { height: 100%; width: 0; background: linear-gradient(90deg, var(--green), var(--green-light)); border-radius: 2px; animation: loadProgress 1.3s ease forwards; }
 @keyframes loadProgress { to { width: 100%; } }
