@@ -18,16 +18,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // --- PLANE follows scroll progress (flies left -> right as you scroll) ---
+  // --- PLANE rides along the header's bottom line, driven by scroll ---
   const plane = document.querySelector('.plane-icon');
-  if (plane) {
+  const navBar = document.querySelector('.navbar');
+  if (plane && navBar) {
     let ticking = false;
     const update = () => {
       const max = (document.documentElement.scrollHeight - window.innerHeight) || 1;
       const p = Math.min(Math.max(window.scrollY / max, 0), 1);
-      const x = -15 + p * 130;               // -15vw (off left) -> 115vw (off right)
-      const y = Math.sin(p * Math.PI) * 22;  // gentle arc dip in px
-      plane.style.transform = `translate(${x}vw, ${y}px) rotate(18deg)`;
+      const x = -15 + p * 130;                 // -15vw (off left) -> 115vw (off right)
+      // sit centred on the header's lower edge (the line)
+      const line = navBar.getBoundingClientRect().bottom;
+      plane.style.top = (line - plane.offsetHeight / 2) + 'px';
+      plane.style.transform = `translateX(${x}vw) rotate(18deg)`;
       ticking = false;
     };
     const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };

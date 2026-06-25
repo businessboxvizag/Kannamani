@@ -1370,17 +1370,18 @@ footer .soc-btn:hover{ background: rgba(27,138,62,0.28); color:#fff; }
 .plane-path{ background: none; }            /* hide the static guide line */
 .plane-icon{
   position: fixed;
-  top: 20vh;
+  top: 0;                                   /* exact line position set by JS */
   left: 0;
   right: auto;
-  font-size: 2.1rem;
-  z-index: 6;
-  opacity: 0.9;
+  font-size: 1.9rem;
+  line-height: 1;
+  z-index: 1002;                            /* above header so it rides the line */
+  opacity: 0.95;
   pointer-events: none;
   animation: none;                          /* no auto loop — driven by scroll */
   transform: translate(-15vw, 0) rotate(18deg);
-  will-change: transform;
-  filter: drop-shadow(0 6px 10px rgba(12,27,74,0.18));
+  will-change: transform, top;
+  filter: drop-shadow(0 4px 8px rgba(12,27,74,0.22));
 }
 @media (prefers-reduced-motion: reduce){
   .plane-icon{ display: none; }
