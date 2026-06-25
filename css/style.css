@@ -1375,7 +1375,7 @@ footer .soc-btn:hover{ background: rgba(27,138,62,0.28); color:#fff; }
   right: auto;
   font-size: 1.9rem;
   line-height: 1;
-  z-index: 1002;                            /* above header so it rides the line */
+  z-index: 99999;                           /* above every element */
   opacity: 0.95;
   pointer-events: none;
   animation: none;                          /* no auto loop — driven by scroll */
