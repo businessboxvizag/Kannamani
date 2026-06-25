@@ -1,0 +1,34 @@
+# Kannamani Consultants Private Limited
+
+> Government-compliant overseas recruitment and manpower consultancy based in Visakhapatnam, Andhra Pradesh, India. Operating since 2005, connecting skilled and unskilled Indian workers with verified employers in the UAE, Gulf and Europe.
+
+## About
+- Founded: 2005 (21+ years)
+- Location: Visakhapatnam, Andhra Pradesh, India
+- Phone / WhatsApp: +91 93914 98731
+- Email: info@kannamaniconsultants.com
+- Focus: Interview co-ordination, candidate counselling, international recruitment support
+
+## Destinations
+United Arab Emirates (UAE), Oman, Saudi Arabia, Qatar, Serbia and other parts of Europe.
+
+## Sectors recruited for
+Construction, Warehouse & Logistics, Manufacturing, Skilled Labor (electricians, plumbers, welders, HVAC technicians), and General / Unskilled Labor.
+
+## Services
+- International job placements with verified overseas employers
+- Visa processing assistance
+- Work permit processing
+- Candidate documentation support
+- Pre-departure counselling and overseas employment guidance
+- Interview co-ordination
+
+## Important note
+Visa processing, offer letters and final recruitment are handled only by government licensed recruiting agents / employers. Kannamani Consultants provides recruitment support, interview coordination and candidate counselling only.
+
+## Pages
+- Home: https://kannamani.vercel.app/index.html
+- About: https://kannamani.vercel.app/about.html
+- Services: https://kannamani.vercel.app/services.html
+- Gallery: https://kannamani.vercel.app/gallery.html
+- Contact & Apply: https://kannamani.vercel.app/contact.html

@@ -5,9 +5,18 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // --- LOADER ---
+  // --- LOADER (only on first visit of the session) ---
   const loader = document.getElementById('loader');
-  if (loader) setTimeout(() => loader.classList.add('hidden'), 1400);
+  if (loader) {
+    let seen = false;
+    try { seen = sessionStorage.getItem('kc_seen'); } catch (e) {}
+    if (seen) {
+      loader.classList.add('hidden');
+    } else {
+      try { sessionStorage.setItem('kc_seen', '1'); } catch (e) {}
+      setTimeout(() => loader.classList.add('hidden'), 1600);
+    }
+  }
 
   // --- NAVBAR SCROLL ---
   const navbar = document.querySelector('.navbar');
