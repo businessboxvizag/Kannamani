@@ -141,22 +141,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- CONTACT FORM ---
+  // --- CONTACT / APPLICATION FORM (emails to kannamanihrconsultants@gmail.com) ---
   const form = document.getElementById('contact-form');
   if (form) {
     form.addEventListener('submit', e => {
       e.preventDefault();
       const btn = form.querySelector('.submit-btn');
       const orig = btn.innerHTML;
-      btn.innerHTML = '✅ Application Received!';
-      btn.style.background = 'linear-gradient(135deg, #10B981, #059669)';
+      btn.innerHTML = 'Sending…';
       btn.disabled = true;
-      setTimeout(() => {
-        btn.innerHTML = orig;
-        btn.style.background = '';
+      const data = Object.fromEntries(new FormData(form).entries());
+      data._subject = 'New Job Application — Kannamani Consultants Website';
+      data._template = 'table';
+      fetch('https://formsubmit.co/ajax/kannamanihrconsultants@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      }).then(r => r.json()).then(() => {
+        btn.innerHTML = 'Application Received';
+        btn.style.background = 'linear-gradient(135deg, #10B981, #059669)';
+        setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.disabled = false; form.reset(); }, 3500);
+      }).catch(() => {
+        btn.innerHTML = 'Please Try Again';
         btn.disabled = false;
-        form.reset();
-      }, 3500);
+        setTimeout(() => { btn.innerHTML = orig; }, 3000);
+      });
     });
   }
 
@@ -197,6 +206,60 @@ document.addEventListener('DOMContentLoaded', () => {
       g.style.left = e.clientX + 'px';
       g.style.top = e.clientY + 'px';
     });
+  }
+
+  // --- REVIEWS (submit + show on site) ---
+  const reviewOpen = document.getElementById('open-review');
+  const reviewOverlay = document.getElementById('review-modal');
+  if (reviewOpen && reviewOverlay) {
+    const reviewForm = document.getElementById('review-form');
+    const grid = document.getElementById('reviews-live');
+    const starWrap = reviewOverlay.querySelector('.star-input');
+    const stars = starWrap ? starWrap.querySelectorAll('span') : [];
+    let rating = 5;
+    const paint = () => stars.forEach((s, i) => s.classList.toggle('on', i < rating));
+    stars.forEach((s, i) => s.addEventListener('click', () => { rating = i + 1; paint(); }));
+    paint();
+    const esc = s => (s || '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    const load = () => { try { return JSON.parse(localStorage.getItem('kc_reviews') || '[]'); } catch (e) { return []; } };
+    const render = () => {
+      if (!grid) return;
+      const items = load();
+      grid.style.display = items.length ? '' : 'none';
+      grid.innerHTML = items.map(r => `
+        <div class="testi-card">
+          <div class="testi-stars">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</div>
+          <p class="testi-text">${esc(r.text)}</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#1B8A3E,#22A84E);">${esc((r.name || '?').slice(0, 2).toUpperCase())}</div>
+            <div><div class="testi-name">${esc(r.name)}</div><div class="testi-origin">${esc(r.place || '')}</div></div>
+          </div>
+        </div>`).join('');
+    };
+    render();
+    const close = () => reviewOverlay.classList.remove('open');
+    reviewOpen.addEventListener('click', () => reviewOverlay.classList.add('open'));
+    reviewOverlay.addEventListener('click', e => { if (e.target === reviewOverlay) close(); });
+    const closeBtn = reviewOverlay.querySelector('.modal-close');
+    if (closeBtn) closeBtn.addEventListener('click', close);
+    if (reviewForm) {
+      reviewForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const d = Object.fromEntries(new FormData(reviewForm).entries());
+        const items = load();
+        items.unshift({ name: d.name, place: d.place, text: d.message, rating: rating });
+        try { localStorage.setItem('kc_reviews', JSON.stringify(items.slice(0, 30))); } catch (e) {}
+        render();
+        fetch('https://formsubmit.co/ajax/kannamanihrconsultants@gmail.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ _subject: 'New Website Review — Kannamani', Name: d.name, Location: d.place, Rating: rating + '/5', Review: d.message })
+        }).catch(() => {});
+        reviewForm.reset(); rating = 5; paint();
+        const thanks = reviewOverlay.querySelector('.review-thanks');
+        if (thanks) { thanks.style.display = 'block'; setTimeout(() => { thanks.style.display = 'none'; close(); }, 1800); }
+      });
+    }
   }
 
 });
