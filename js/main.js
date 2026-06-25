@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const plane = document.querySelector('.plane-icon');
   const navBar = document.querySelector('.navbar');
   if (plane && navBar) {
+    document.body.appendChild(plane);   // lift out of hero so it sits above all elements
     let ticking = false;
     const update = () => {
       const max = (document.documentElement.scrollHeight - window.innerHeight) || 1;
