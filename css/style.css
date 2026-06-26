@@ -1359,6 +1359,7 @@ footer .soc-btn:hover{ background: rgba(27,138,62,0.28); color:#fff; }
   font-size: 0.76rem; line-height: 1.7;
   color: rgba(255,255,255,0.5); max-width: 1000px;
 }
+.footer-subheading{ font-family: var(--font-heading); font-weight: 700; font-size: 0.76rem; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin: 1rem 0 0.4rem; opacity: 0.92; }
 .powered-by{ color: rgba(255,255,255,0.6); }
 .powered-by b{ color: var(--green-light); font-weight: 700; }
 
