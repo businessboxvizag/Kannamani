@@ -1504,3 +1504,43 @@ footer .soc-btn:hover{ background: rgba(27,138,62,0.28); color:#fff; }
   .float-btn{ width: 46px; height: 46px; }
   .float-btn svg{ width: 22px; height: 22px; }
 }
+
+/* ===================================================
+   FINAL MOBILE HARDENING (authoritative — keep last)
+   =================================================== */
+html, body { overflow-x: hidden; max-width: 100%; }
+.nav-mobile-open .float-cta,
+.nav-mobile-open .plane-icon { display: none; }
+
+@media (max-width: 1024px){
+  .nav-logo img { height: 84px; }
+  .navbar.scrolled .nav-logo img { height: 72px; }
+}
+@media (max-width: 768px){
+  .nav-logo img { height: 66px; }
+  .navbar.scrolled .nav-logo img { height: 58px; }
+  .hero { padding-top: 9.5rem; }
+  .page-hero { padding: 9.5rem 0 4rem; }
+  .hero-btns { flex-wrap: wrap; }
+  .hero-btns .btn { flex: 1 1 auto; justify-content: center; }
+  .cta-btns { flex-direction: column; }
+  .cta-btns .btn { width: 100%; justify-content: center; }
+  .marquee-track { font-size: 0.8rem; }
+  .marquee-track span { padding: 0 1.6rem; }
+  .footer-cta { justify-content: flex-start; }
+  .gallery-filters { gap: 0.5rem; }
+  .section-title { line-height: 1.2; }
+}
+@media (max-width: 480px){
+  .nav-logo img { height: 56px; }
+  .navbar.scrolled .nav-logo img { height: 50px; }
+  .hero { padding-top: 8.5rem; }
+  .page-hero { padding: 8.5rem 0 3.5rem; }
+  h1 { font-size: clamp(1.9rem, 8vw, 2.5rem); }
+  .float-cta { right: 12px; bottom: 12px; }
+  .float-btn { width: 46px; height: 46px; }
+  .plane-icon svg { width: 32px; height: 32px; }
+  .reviews-live { grid-template-columns: 1fr; }
+  .modal { padding: 1.5rem 1.25rem; }
+  .testi-card, .sector-card, .why-item, .cert-card { padding: 1.5rem; }
+}
