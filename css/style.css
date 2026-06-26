@@ -1170,7 +1170,7 @@ footer {
   display: none;
   padding: 0 1.5rem 1.4rem;
   font-size: 0.92rem;
-  color: var(--gray-light);
+  color: #2F3C57;
   line-height: 1.8;
 }
 
@@ -1334,6 +1334,8 @@ p{ color: var(--ink-soft); }
 .cta-card{ background: linear-gradient(135deg, #165C30, #0A1545); border-color: rgba(27,138,62,0.35); }
 .cta-card h2{ color:#fff; }
 .cta-card p{ color: rgba(255,255,255,0.85); }
+.cta-card .btn-outline{ color:#fff; border-color: rgba(255,255,255,0.55); }
+.cta-card .btn-outline:hover{ color: var(--green-light); border-color: var(--green-light); background: rgba(255,255,255,0.08); }
 
 /* Divider */
 .gradient-divider{ background: linear-gradient(90deg, transparent, rgba(27,138,62,0.35), rgba(12,27,74,0.12), rgba(27,138,62,0.35), transparent); }
