@@ -1484,3 +1484,22 @@ footer .soc-btn:hover{ background: rgba(27,138,62,0.28); color:#fff; }
 .star-input span{ color: #d8dee9; transition: color 0.15s; }
 .star-input span.on{ color: #F59E0B; }
 .review-thanks{ display: none; text-align: center; color: var(--green); font-weight: 600; padding: 1rem 0; }
+
+/* Floating fixed contact buttons (bottom-right, over content) */
+.float-cta{
+  position: fixed; right: 20px; bottom: 22px; z-index: 9998;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.float-btn{
+  width: 52px; height: 52px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; box-shadow: 0 8px 22px rgba(8,15,40,0.28);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.float-btn svg{ width: 26px; height: 26px; fill: currentColor; }
+.float-btn:hover{ transform: scale(1.1) translateY(-2px); box-shadow: 0 12px 28px rgba(8,15,40,0.38); }
+@media (max-width: 480px){
+  .float-cta{ right: 14px; bottom: 14px; gap: 10px; }
+  .float-btn{ width: 46px; height: 46px; }
+  .float-btn svg{ width: 22px; height: 22px; }
+}
